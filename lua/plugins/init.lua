@@ -22,7 +22,7 @@ return {
   		ensure_installed = {
   			"lua-language-server", "stylua",
   			"html-lsp", "css-lsp" , "prettier",
-        "pyright"
+        "pyright", "mypy", "ruff"
   		},
   	},
   },
@@ -31,9 +31,16 @@ return {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
   -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
+  -- 		 e	"vim", "lua", "vimdoc",
   --      "html", "css"
   -- 		},
   -- 	},
   -- },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    ft = {"python"},
+    opts = function()
+      require "configs.null-ls"
+    end,
+  }
 }
